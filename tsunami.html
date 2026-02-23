@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>My Favorite Tsunami 🌊</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, #cfe9ff, #eaf6ff);
+      color: #033e6b;
+      overflow: hidden;
+      text-align: center;
+    }
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: clamp(2.2rem, 7vw, 3.2rem);
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease;
+    }
+    p {
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      max-width: 800px;
+      line-height: 1.8;
+      animation: fadeIn 3s ease;
+    }
+    .cards {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 900px;
+    }
+    .card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+      animation: slideUp 1.5s ease;
+    }
+    .final-btn {
+      margin-top: 40px;
+      background: #0277bd;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    .final-message {
+      display: none;
+      margin-top: 30px;
+      font-size: clamp(1.4rem, 5vw, 1.8rem);
+      color: #01579b;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .heart {
+      position: fixed;
+      top: -20px;
+      font-size: 20px;
+      color: #2196f3;
+      animation: fall 6s linear forwards;
+    }
+    @keyframes fall {
+      to { transform: translateY(110vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>LEEE… 🌊</h1>
+  <p>
+    You finally caught the Tsunami.
+    <br /><br />
+    PS: <strong>You’re my favorite Tsunami forever</strong> 🫶🌊
+    <br /><br />
+    Not the kind that destroys things,
+    but the kind that entered my life
+    and changed everything beautifully.
+  </p>
+
+  <div class="cards">
+    <div class="card">🌅 The day we became <strong>us</strong></div>
+    <div class="card">😂 The laughs only <strong>we</strong> understand</div>
+    <div class="card">🌙 Late nights & long talks</div>
+    <div class="card">♾️ A forever I choose every day</div>
+  </div>
+
+  <button class="final-btn" onclick="reveal()">One last thing…</button>
+  <div class="final-message" id="finalMessage">
+    No matter how big the wave,
+    <br />I’ll always stand right here with you.
+    <br /><br />
+    <strong>I love you, LEEE ❤️</strong>
+    <br /><br />
+    🎉 Happy Birthday, My Stitch 🌊💙
+  </div>
+</div>
+
+<script>
+  function reveal() {
+    document.getElementById('finalMessage').style.display = 'block';
+  }
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.innerHTML = '💙';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = 5 + Math.random() * 3 + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+  }
+  setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
